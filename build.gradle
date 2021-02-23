@@ -1,8 +1,10 @@
 plugins {
-    id 'java'
+    id 'application'
+    id 'org.openjfx.javafxplugin' version '0.0.9'
 }
 
-group 'org.example'
+group 'org.int32_t'
+version '1.0-SNAPSHOT'
 version '1.0-SNAPSHOT'
 
 repositories {
@@ -12,7 +14,28 @@ repositories {
 dependencies {
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.6.0'
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine'
+    compile 'com.jfoenix:jfoenix:9.0.10'
 }
+
+javafx {
+    version = "15.0.1"
+    modules = [ 'javafx.controls' , 'javafx.fxml']
+}
+
+sourceSets {
+    main {
+        resources {
+            srcDirs = ["src/main/java"]
+            includes = ["**/*.fxml"]
+        }
+    }
+}
+
+
+application {
+    mainClass = 'org.int32_t.Main'
+}
+
 
 test {
     useJUnitPlatform()
