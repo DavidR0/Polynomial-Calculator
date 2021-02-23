@@ -14,6 +14,7 @@ public class Main extends Application {
         Parent root = FXMLLoader.load(getClass().getResource("views/view.fxml"));
         primaryStage.setTitle("Polynomial Calculator");
         primaryStage.setScene(new Scene(root, 610, 500));
+        primaryStage.getIcons().add(new Image("org/int32_t/resources/icon.png"));
         primaryStage.show();
     }
 

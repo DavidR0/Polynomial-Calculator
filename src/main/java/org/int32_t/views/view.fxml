@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<FlowPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="488.0" prefWidth="607.0" style="-fx-background-color: #e1f5fe;" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <BorderPane prefHeight="487.0" prefWidth="608.0">
+         <top>
+            <GridPane alignment="CENTER" prefHeight="125.0" prefWidth="599.0" BorderPane.alignment="CENTER">
+              <columnConstraints>
+                <ColumnConstraints maxWidth="421.0" minWidth="263.0" prefWidth="290.0" />
+                <ColumnConstraints maxWidth="316.0" minWidth="158.0" prefWidth="289.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <TextArea prefHeight="37.0" prefWidth="160.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <TextArea GridPane.rowIndex="1" />
+                  <Label text="1st Operand" />
+                  <Label text="2nd Operand" GridPane.columnIndex="1" />
+                  <Label text="Result" GridPane.rowIndex="2" />
+                  <Label text="Remainder" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                  <TextArea prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="3" />
+                  <TextArea prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+               </children>
+               <padding>
+                  <Insets left="10.0" right="10.0" />
+               </padding>
+            </GridPane>
+         </top>
+         <center>
+            <GridPane alignment="CENTER" BorderPane.alignment="CENTER">
+              <columnConstraints>
+                <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Button mnemonicParsing="false" prefHeight="35.0" prefWidth="150.0" style="-fx-background-color: #03a9f4;" text="Add" textFill="WHITE" />
+                  <Button mnemonicParsing="false" prefHeight="35.0" prefWidth="150.0" style="-fx-background-color: #03a9f4;" text="Subtract" textFill="WHITE" GridPane.rowIndex="2" />
+                  <Button mnemonicParsing="false" prefHeight="35.0" prefWidth="150.0" style="-fx-background-color: #03a9f4;" text="Multiply" textFill="WHITE" GridPane.rowIndex="1" />
+                  <Button mnemonicParsing="false" prefHeight="35.0" prefWidth="150.0" style="-fx-background-color: #03a9f4;" text="Divide" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <Button mnemonicParsing="false" prefHeight="35.0" prefWidth="150.0" style="-fx-background-color: #03a9f4;" text="Differentiate" textFill="WHITE" GridPane.columnIndex="1" />
+                  <Button mnemonicParsing="false" prefHeight="35.0" prefWidth="150.0" style="-fx-background-color: #03a9f4;" text="Integrate" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+               </children>
+               <padding>
+                  <Insets left="10.0" right="10.0" top="10.0" />
+               </padding>
+            </GridPane>
+         </center>
+         <bottom>
+            <Label prefHeight="149.0" prefWidth="605.0" text="Instructions: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum." textAlignment="CENTER" wrapText="true" BorderPane.alignment="CENTER">
+               <font>
+                  <Font name="Calibri" size="12.0" />
+               </font>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <padding>
+                  <Insets top="40.0" />
+               </padding></Label>
+         </bottom>
+      </BorderPane>
+   </children>
+</FlowPane>
