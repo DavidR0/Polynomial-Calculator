@@ -24,19 +24,37 @@ public class Controller {
         Polinomial pol1 = new Polinomial(OpOne.getText());
         Polinomial pol2 = new Polinomial(OpTwo.getText());
         Result.setText(normalizePolinomial(poliSubtract(pol1,pol2)).toString());
-
     }
 
     public void MultiplyBtn(ActionEvent actionEvent) {
+        Polinomial pol1 = new Polinomial(OpOne.getText());
+        Polinomial pol2 = new Polinomial(OpTwo.getText());
+        Result.setText(normalizePolinomial(poliMultiply(pol1,pol2)).toString());
+//        Result.setText(poliMultiply(pol1,pol2).toString());
+
     }
 
     public void DivideBtn(ActionEvent actionEvent) {
     }
 
     public void DifferentiateBtn(ActionEvent actionEvent) {
+        Polinomial pol1 = new Polinomial(OpOne.getText());
+        Result.setText(normalizePolinomial(poliDifferentiate(pol1)).toString());
     }
 
     public void IntegrateBtn(ActionEvent actionEvent) {
+    }
+
+    private Polinomial poliDifferentiate(Polinomial pol1){
+        for(Monomial m : pol1.polinomial){
+            if(m.getPower() > 0){//x^*
+                Monomial buff = new Monomial(m.getPower() - 1,m.getCoeficiant()*m.getPower());
+                pol1.polinomial.set(pol1.polinomial.indexOf(m),buff);
+            }else{//constant, so we delete the element
+                pol1.polinomial.remove(m);
+            }
+        }
+        return pol1;
     }
 
     private Polinomial poliAdd(Polinomial pol1, Polinomial pol2){
@@ -71,6 +89,21 @@ public class Controller {
         return  pol1;
     }
 
+    private Polinomial poliMultiply(Polinomial pol1, Polinomial pol2){
+        Polinomial pol = new Polinomial();
+        for(Monomial m : pol1.polinomial){
+            for(Monomial n : pol2.polinomial){
+                Monomial monBuff = new Monomial();
+                monBuff.setCoeficiant(n.getCoeficiant() * m.getCoeficiant());
+                monBuff.setPower(n.getPower() + m.getPower());
+                pol.polinomial.add(monBuff);
+            }
+        }
+        return pol;
+    }
+//    2x^4+3x+4x^5  2x^4+2x+2
+//    2x^2+3x+4x^4  x^4+3x+4
+
     private Polinomial normalizePolinomial(Polinomial pol){
         for(Monomial m : pol.polinomial){
             for (Monomial n : pol.polinomial) {
@@ -79,6 +112,10 @@ public class Controller {
                         Collections.swap(pol.polinomial, pol.polinomial.indexOf(n), pol.polinomial.indexOf(m));
                         m = n;
                     }
+                }
+                if(m.getPower() == n.getPower() && m != n){
+                    m.setCoeficiant(m.getCoeficiant() + n.getCoeficiant());
+                    n.setPower(0); n.setCoeficiant(0);
                 }
             }
         }

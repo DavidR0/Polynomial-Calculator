@@ -7,6 +7,10 @@ public class Polinomial {
 
     public List<Monomial> polinomial;
 
+    public Polinomial(){
+        polinomial  = new LinkedList<>();
+    }
+
     public Polinomial(String poli) {
         polinomial  = new LinkedList<>();
         polinomial = parse(poli);
@@ -32,7 +36,6 @@ public class Polinomial {
                     mon.setCoeficiant(Float.parseFloat(a));
                     mon.setPower(0);
                 }
-//                mon.printMonomial();
                 poliBuff.add(mon);
             }
         }
