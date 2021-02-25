@@ -1,6 +1,5 @@
 package org.int32_t.controllers;
 
-        import javafx.event.ActionEvent;
         import javafx.fxml.FXML;
         import javafx.scene.control.TextArea;
         import org.int32_t.model.Monomial;
@@ -14,19 +13,19 @@ public class Controller {
     @FXML private TextArea Remainder;
 
 
-    public void AddBtn(ActionEvent actionEvent) {
+    public void AddBtn() {
         Polinomial pol1 = new Polinomial(OpOne.getText());
         Polinomial pol2 = new Polinomial(OpTwo.getText());
         Result.setText(normalizePolinomial(poliAdd(pol1,pol2)).toString());
     }
 
-    public void SubtractBtn(ActionEvent actionEvent) {
+    public void SubtractBtn() {
         Polinomial pol1 = new Polinomial(OpOne.getText());
         Polinomial pol2 = new Polinomial(OpTwo.getText());
         Result.setText(normalizePolinomial(poliSubtract(pol1,pol2)).toString());
     }
 
-    public void MultiplyBtn(ActionEvent actionEvent) {
+    public void MultiplyBtn() {
         Polinomial pol1 = new Polinomial(OpOne.getText());
         Polinomial pol2 = new Polinomial(OpTwo.getText());
         Result.setText(normalizePolinomial(poliMultiply(pol1,pol2)).toString());
@@ -34,15 +33,15 @@ public class Controller {
 
     }
 
-    public void DivideBtn(ActionEvent actionEvent) {
+    public void DivideBtn() {
     }
 
-    public void DifferentiateBtn(ActionEvent actionEvent) {
+    public void DifferentiateBtn() {
         Polinomial pol1 = new Polinomial(OpOne.getText());
         Result.setText(normalizePolinomial(poliDifferentiate(pol1)).toString());
     }
 
-    public void IntegrateBtn(ActionEvent actionEvent) {
+    public void IntegrateBtn() {
     }
 
     private Polinomial poliDifferentiate(Polinomial pol1){
