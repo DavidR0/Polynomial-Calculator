@@ -28,7 +28,7 @@
                   <Label text="Result" GridPane.rowIndex="2" />
                   <Label text="Remainder" GridPane.columnIndex="1" GridPane.rowIndex="2" />
                   <TextArea fx:id="Result" prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="3" />
-                  <TextArea prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                  <TextArea fx:id="Remainder" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
                </children>
                <padding>
                   <Insets left="10.0" right="10.0" />
