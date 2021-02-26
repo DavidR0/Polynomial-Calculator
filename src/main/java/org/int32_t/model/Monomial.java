@@ -32,9 +32,9 @@ public class Monomial {
     @Override
     public String toString() {
         if (coeficiant >= 0) {
-            return "+" + coeficiant + "x^" + power;
+            return "+" + String.format("%.2f", coeficiant) + "x^" + power;
         } else{
-            return coeficiant + "x^" + power;
+            return String.format("%.2f", coeficiant) + "x^" + power;
         }
     }
 

@@ -29,8 +29,6 @@ public class Controller {
         Polinomial pol1 = new Polinomial(OpOne.getText());
         Polinomial pol2 = new Polinomial(OpTwo.getText());
         Result.setText(normalizePolinomial(poliMultiply(pol1,pol2)).toString());
-//        Result.setText(poliMultiply(pol1,pol2).toString());
-
     }
 
     public void DivideBtn() {
@@ -42,6 +40,8 @@ public class Controller {
     }
 
     public void IntegrateBtn() {
+        Polinomial pol1 = new Polinomial(OpOne.getText());
+        Result.setText(normalizePolinomial(poliIntegrate(pol1)).toString());
     }
 
     private Polinomial poliDifferentiate(Polinomial pol1){
@@ -97,6 +97,14 @@ public class Controller {
                 monBuff.setPower(n.getPower() + m.getPower());
                 pol.polinomial.add(monBuff);
             }
+        }
+        return pol;
+    }
+
+    private Polinomial poliIntegrate(Polinomial pol){
+        for(Monomial m : pol.polinomial){
+            m.setPower(m.getPower() + 1);
+            m.setCoeficiant(m.getCoeficiant() * 1/m.getPower());
         }
         return pol;
     }
