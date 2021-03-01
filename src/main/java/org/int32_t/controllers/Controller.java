@@ -114,6 +114,20 @@ public class Controller {
         }
         return pol;
     }
+
+    private Polinomial[] poliDivision(Polinomial dividend, Polinomial divisor){
+        Polinomial result = new Polinomial();
+        while(dividend.getDegree() >= divisor.getDegree()){
+            normalizePolinomial(dividend);
+            Monomial mon = new Monomial(dividend.polinomial.get(0).getPower() - divisor.polinomial.get(0).getPower(),
+                    dividend.polinomial.get(0).getCoeficiant() / divisor.polinomial.get(0).getCoeficiant());
+                result.polinomial.add(mon);
+                Polinomial buff = new Polinomial();
+                buff.polinomial.add(mon);
+            poliSubtract(dividend, poliMultiply(buff, divisor));
+        }
+        return new Polinomial[] {result, dividend};
+    }
 //    2x^4+3x+4x^5  2x^4+2x+2
 //    2x^2+3x+4x^4  x^4+3x+4
 
