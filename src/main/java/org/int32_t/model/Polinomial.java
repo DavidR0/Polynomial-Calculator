@@ -20,6 +20,16 @@ public class Polinomial {
         this.polinomial = parse(polinomial);
     }
 
+    public int  getDegree(){
+        int degree = 0;
+        for (Monomial mon : polinomial ) {
+            if(mon.getPower() > degree && mon.getCoeficiant() != 0){
+                degree = mon.getPower();
+            }
+        }
+        return  degree;
+    }
+
     private List<Monomial> parse(String poli){
         List<Monomial>poliBuff = new LinkedList<>();
         poli = poli.replaceAll(" ",""); //Remove bad spacing

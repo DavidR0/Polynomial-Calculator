@@ -32,6 +32,12 @@ public class Controller {
     }
 
     public void DivideBtn() {
+        Polinomial pol1 = new Polinomial(OpOne.getText());
+        Polinomial pol2 = new Polinomial(OpTwo.getText());
+        Polinomial[] divRez;
+        divRez = poliDivision(pol1,pol2);
+        Result.setText(normalizePolinomial(divRez[0]).toString());
+        Remainder.setText(normalizePolinomial(divRez[1]).toString());
     }
 
     public void DifferentiateBtn() {
@@ -85,7 +91,7 @@ public class Controller {
                 pol1.polinomial.add(new Monomial(m.getPower(),-m.getCoeficiant()));
             }
         }
-        return  pol1;
+                return  pol1;
     }
 
     private Polinomial poliMultiply(Polinomial pol1, Polinomial pol2){
