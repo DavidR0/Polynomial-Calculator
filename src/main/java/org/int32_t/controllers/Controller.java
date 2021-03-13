@@ -38,13 +38,15 @@ public class Controller {
 
     public void DivideBtn() {
         clearFields();
-        if(isGoodInput(OpOne.getText()) && isGoodInput(OpTwo.getText())) {
+        if(isGoodInput(OpOne.getText()) && isGoodInput(OpTwo.getText()) && !OpTwo.getText().equals("+0") && !OpOne.getText().equals("+0")) {
             Polinomial pol1 = new Polinomial(OpOne.getText());
             Polinomial pol2 = new Polinomial(OpTwo.getText());
             Polinomial[] divRez;
             divRez = poliDivision(pol1,pol2);
             Result.setText(normalizePolinomial(divRez[0]).toString());
             Remainder.setText(normalizePolinomial(divRez[1]).toString());
+        }else{
+            Result.setText("Bad input!");
         }
     }
 
