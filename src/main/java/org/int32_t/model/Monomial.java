@@ -1,5 +1,6 @@
 package org.int32_t.model;
 
+//Monomial class, that is used to create a polynomial
 public class Monomial {
     private int power;
     private Number coefficient;
@@ -29,6 +30,7 @@ public class Monomial {
         this.coefficient = coefficient;
     }
 
+    //Returns the monomial in string format, also checks if the monomial is a floating one or an integer, so that the correct format is returned
     @Override
     public String toString() {
         if (coefficient.floatValue() - coefficient.intValue() != 0) {

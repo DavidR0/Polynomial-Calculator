@@ -7,7 +7,7 @@ import java.util.regex.Pattern;
 
 public class Polinomial {
 
-    public List<Monomial> polinomial;
+    public List<Monomial> polinomial; //This is the polynomial its self
 
     public Polinomial(){
         polinomial  = new LinkedList<>();
@@ -32,6 +32,7 @@ public class Polinomial {
         return  degree;
     }
 
+    //Because in the constructor we expect a string that represents the polynomial, we have to parse it and create the monomials. This is done using regex
     private List<Monomial> regexParser(String poli) {
         List<Monomial> poliBuff = new LinkedList<>();
         String monMatcher = "(?<Mon>(?<t1>(?<s>\\+|-)(?<c>\\d+)?(?<x>x)(?<p>\\^\\d+))|(?<t2>(?<s1>\\+|-)(?<c1>\\d+)?(?<x2>x))|(?<t3>(?<s2>\\+|-)(?<c2>\\d+)))";
@@ -70,66 +71,20 @@ public class Polinomial {
         return poliBuff;
     }
 
-//    private List<Monomial> parse(String poli){
-//        List<Monomial>poliBuff = new LinkedList<>();
-//        poli = poli.replaceAll(" ",""); //Remove bad spacing
-//        poli = poli.replaceAll("-","+-");  //Split the string into Monomials
-//        String[] arrOfStr = poli.split("[+]", -2);
-//        for (String a : arrOfStr){//Format 3x^2, x^3, x, 3
-//            Monomial mon = new Monomial();
-//            if(a.length() > 0) {
-//                if (a.contains("x^")) {
-//                    mon = caseXPow(a);
-//                } else if (a.contains("x")) {
-//                    mon = caseX(a);
-//                } else { //Just a number
-//                    mon.setCoefficient(Float.parseFloat(a));
-//                    mon.setPower(0);
-//                }
-//                poliBuff.add(mon);
-//            }
-//        }
-//        return poliBuff;
-//    }
-//
-//    private Monomial caseX(String a){
-//        Monomial mon = new Monomial();
-//        a = a.replace("x", "");
-//        if (a.length() > 0) { //Case where +-3x, or -x
-//            if (a.length() == 1 && a.contains("-")) {
-//                mon.setCoefficient(-1);
-//            } else {
-//                mon.setCoefficient(Float.parseFloat(a));
-//            }
-//        } else { //Case where x
-//            mon.setCoefficient(1);
-//        }
-//        mon.setPower(1);
-//        return  mon;
-//    }
-//
-//    private Monomial caseXPow(String a){
-//        Monomial mon = new Monomial();
-//            String[] buff = a.split("\\^");
-//            for (String c : buff) {
-//                if (c.contains("x")) { //3x, x, this is the coeficiant part
-//                    c = c.replace("x", "");
-//                    if (c.length() > 0) {//Case where +-3x, or -x
-//                        if (c.length() == 1 && c.contains("-")) {
-//                            mon.setCoefficient(-1);
-//                        } else {
-//                            mon.setCoefficient(Float.parseFloat(c));
-//                        }
-//                    } else { //Case where x
-//                        mon.setCoefficient(1);
-//                    }
-//                } else {//this is the power
-//                    mon.setPower(Integer.parseInt(c));
-//                }
-//            }
-//        return mon;
-//    }
+    //Returns a boolean that tells us if a polynomial is null
+    public boolean isNUll(){
+        boolean isNull = true;
 
+        for(Monomial mon : this.polinomial){
+            if(mon.getCoefficient() != 0){
+                isNull = false;
+            }
+
+        }
+        return isNull;
+    }
+
+    //Returns they polynomial in string format
     @Override
     public String toString() {
         String polinomial = "";
