@@ -47,7 +47,7 @@ public class Polinomial {
                }else{
                    buff.setCoefficient(1);
                }
-               if(matcher.group("s").equals("-")) buff.setCoefficient(buff.getCoefficient()*-1);
+               if(matcher.group("s").equals("-")){ buff.setCoefficient(buff.getCoefficient()*-1);}
                buff.setPower(Integer.parseInt(matcher.group("p").replaceAll("\\^","")));
            }else if(matcher.group("t2") != null){//+-(nr)x
                if(matcher.group("c1") != null){
@@ -55,7 +55,7 @@ public class Polinomial {
                }else{
                    buff.setCoefficient(1);
                }
-               if(matcher.group("s1").equals("-")) buff.setCoefficient(buff.getCoefficient()*-1);
+               if(matcher.group("s1").equals("-")){ buff.setCoefficient(buff.getCoefficient()*-1);}
                buff.setPower(1);
            }else{
                if(matcher.group("c2") != null){
@@ -63,7 +63,7 @@ public class Polinomial {
                }else{
                    buff.setCoefficient(1);
                }
-               if(matcher.group("s2").equals("-")) buff.setCoefficient(buff.getCoefficient()*-1);
+               if(matcher.group("s2").equals("-")) {buff.setCoefficient(buff.getCoefficient()*-1);}
                buff.setPower(0);
            }
            poliBuff.add(buff);

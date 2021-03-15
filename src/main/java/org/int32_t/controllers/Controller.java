@@ -20,21 +20,27 @@ public class Controller {
         clearFields();
         Polinomial pol1 = new Polinomial(OpOne.getText());
         Polinomial pol2 = new Polinomial(OpTwo.getText());
-        if(isGoodInput(OpOne.getText()) && isGoodInput(OpTwo.getText())) Result.setText(normalizePolinomial(poliAdd(pol1,pol2)).toString());
+        if(isGoodInput(OpOne.getText()) && isGoodInput(OpTwo.getText())){
+            Result.setText(normalizePolinomial(poliAdd(pol1,pol2)).toString());
+        }
     }
     //This is called when the Subtract button is pressed
     public void SubtractBtn() {
         clearFields();
         Polinomial pol1 = new Polinomial(OpOne.getText());
         Polinomial pol2 = new Polinomial(OpTwo.getText());
-        if(isGoodInput(OpOne.getText()) && isGoodInput(OpTwo.getText())) Result.setText(normalizePolinomial(poliSubtract(pol1,pol2)).toString());
+        if(isGoodInput(OpOne.getText()) && isGoodInput(OpTwo.getText())) {
+            Result.setText(normalizePolinomial(poliSubtract(pol1,pol2)).toString());
+        }
     }
     //This is called when the Multiply button is pressed
     public void MultiplyBtn() {
         clearFields();
         Polinomial pol1 = new Polinomial(OpOne.getText());
         Polinomial pol2 = new Polinomial(OpTwo.getText());
-        if(isGoodInput(OpOne.getText()) && isGoodInput(OpTwo.getText())) Result.setText(normalizePolinomial(poliMultiply(pol1,pol2)).toString());
+        if(isGoodInput(OpOne.getText()) && isGoodInput(OpTwo.getText())) {
+            Result.setText(normalizePolinomial(poliMultiply(pol1,pol2)).toString());
+        }
     }
     //This is called when the Divide button is pressed
     public void DivideBtn() {
@@ -60,14 +66,18 @@ public class Controller {
     public void DifferentiateBtn() {
         clearFields();
         Polinomial pol1 = new Polinomial(OpOne.getText());
-        if(isGoodInput(OpOne.getText())) Result.setText(normalizePolinomial(poliDifferentiate(pol1)).toString());
+        if(isGoodInput(OpOne.getText())) {
+            Result.setText(normalizePolinomial(poliDifferentiate(pol1)).toString());
+        }
     }
 
     //This is called when the Integrate button is pressed
     public void IntegrateBtn() {
         clearFields();
         Polinomial pol1 = new Polinomial(OpOne.getText());
-        if(isGoodInput(OpOne.getText())) Result.setText(normalizePolinomial(poliIntegrate(pol1)).toString());
+        if(isGoodInput(OpOne.getText())) {
+            Result.setText(normalizePolinomial(poliIntegrate(pol1)).toString());
+        }
     }
     //The algorithm used for the differentiation
     public Polinomial poliDifferentiate(Polinomial pol1){
