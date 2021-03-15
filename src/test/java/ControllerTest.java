@@ -37,7 +37,7 @@ public class ControllerTest {
     void poliDifferentiate() {
         Controller ctr = new Controller();
 
-        LinkedList<InputEle> data = new LinkedList<InputEle>();
+        LinkedList<InputEle> data = new LinkedList<>();
         data.add(new InputEle(new Polinomial("+2x^2+2x+1"),new Polinomial("+4x^1+2x^0")));
         data.add(new InputEle(new Polinomial("+1"),new Polinomial("0")));
         data.add(new InputEle(new Polinomial("+2x+1"),new Polinomial("+2x^0")));
@@ -51,7 +51,7 @@ public class ControllerTest {
     void poliAdd() {
         Controller ctr = new Controller();
 
-        LinkedList<InputEle> data = new LinkedList<InputEle>();
+        LinkedList<InputEle> data = new LinkedList<>();
         data.add(new InputEle(new Polinomial("+2x^2+2x+1"),new Polinomial("+1"),new Polinomial("+2x^2+2x+2")));
         data.add(new InputEle(new Polinomial("+2x^2+2x+1"),new Polinomial("+2x"),new Polinomial("+2x^2+4x+1")));
         data.add(new InputEle(new Polinomial("+2x^2+2x+1"),new Polinomial("+2x^2+3x"),new Polinomial("+4x^2+5x+1")));
@@ -65,7 +65,7 @@ public class ControllerTest {
     void poliSubtract() {
         Controller ctr = new Controller();
 
-        LinkedList<InputEle> data = new LinkedList<InputEle>();
+        LinkedList<InputEle> data = new LinkedList<>();
         data.add(new InputEle(new Polinomial("+2x^2+2x+1"),new Polinomial("+1"),new Polinomial("+2x^2+2x")));
         data.add(new InputEle(new Polinomial("+2x^2+2x+1"),new Polinomial("+2x"),new Polinomial("+2x^2+1")));
         data.add(new InputEle(new Polinomial("+2x^2+2x+1"),new Polinomial("+2x^2+3x"),new Polinomial("-x+1")));
@@ -79,7 +79,7 @@ public class ControllerTest {
     void poliMultiply() {
         Controller ctr = new Controller();
 
-        LinkedList<InputEle> data = new LinkedList<InputEle>();
+        LinkedList<InputEle> data = new LinkedList<>();
         data.add(new InputEle(new Polinomial("+2x^2+2x+1"),new Polinomial("+1"),new Polinomial("+2x^2+2x+1")));
         data.add(new InputEle(new Polinomial("+2x^2+2x+1"),new Polinomial("+2x"),new Polinomial("+4x^3+4x^2+2x")));
         data.add(new InputEle(new Polinomial("+2x^2+2x+1"),new Polinomial("+2x^2+3x"),new Polinomial("+4x^4+10x^3+8x^2+3x^1")));
@@ -93,7 +93,7 @@ public class ControllerTest {
     void poliIntegrate() {
         Controller ctr = new Controller();
 
-        LinkedList<InputEle> data = new LinkedList<InputEle>();
+        LinkedList<InputEle> data = new LinkedList<>();
         data.add(new InputEle(new Polinomial("+2x+1"),new Polinomial("+1x^2+1x^1")));
         data.add(new InputEle(new Polinomial("+1"),new Polinomial("+1x^1")));
 
@@ -112,7 +112,7 @@ public class ControllerTest {
     void poliDivision() {
         Controller ctr = new Controller();
 
-        LinkedList<InputEle> data = new LinkedList<InputEle>();
+        LinkedList<InputEle> data = new LinkedList<>();
         data.add(new InputEle(new Polinomial("+2x^2+2x+1"),new Polinomial("+1x"),new Polinomial("+2x^1+2x^0"),new Polinomial("+1x^0")));
         data.add(new InputEle(new Polinomial("+2x^2+2x+1"),new Polinomial("+2x^2+1"),new Polinomial("+1x^0"),new Polinomial("+2x^1")));
 
