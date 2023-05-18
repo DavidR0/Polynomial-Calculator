@@ -1,5 +1,3 @@
-Certainly! Here is the revised summary with the example picture included:
-
 # Polynomial Calculator
 
 ## Objective
